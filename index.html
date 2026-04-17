@@ -7,13 +7,13 @@
   <meta name="description" content="Pegah Varghaei is a PhD student at Michigan State University working on biometrics, facial analysis, and AI for aesthetic medicine." />
   <style>
     :root {
-      --bg: #f4f6f8;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #1d4ed8;
-      --border: #e5e7eb;
-      --shadow: 0 10px 25px rgba(0,0,0,0.05);
+      --card: rgba(255, 255, 255, 0.92);
+      --card-strong: rgba(255, 255, 255, 0.96);
+      --text: #10202f;
+      --muted: #52606d;
+      --accent: #0f4c81;
+      --border: rgba(255, 255, 255, 0.35);
+      --shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
     }
 
     * {
@@ -23,21 +23,24 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      background:
+        linear-gradient(rgba(8, 18, 28, 0.44), rgba(8, 18, 28, 0.44)),
+        url("images/math.png") center center / cover fixed no-repeat;
     }
 
     .container {
-      max-width: 980px;
+      max-width: 1020px;
       margin: 0 auto;
       padding: 32px 20px 60px;
     }
 
     header {
-      background: var(--card);
+      background: var(--card-strong);
+      backdrop-filter: blur(4px);
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 20px;
       box-shadow: var(--shadow);
       padding: 36px 28px;
       margin-bottom: 24px;
@@ -53,21 +56,22 @@
 
     .name-block h1 {
       margin: 0;
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     .name-block p {
       margin: 8px 0 0;
       color: var(--muted);
-      font-size: 1.02rem;
+      font-size: 1.03rem;
     }
 
     nav a {
       text-decoration: none;
       color: var(--text);
       margin-left: 18px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     nav a:hover {
@@ -76,19 +80,19 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 28px;
+      grid-template-columns: 190px 1fr;
+      gap: 30px;
       align-items: center;
       margin-top: 28px;
     }
 
     .profile-pic {
-      width: 170px;
-      height: 170px;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid #fff;
-      box-shadow: var(--shadow);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     }
 
     .hero-text p {
@@ -104,7 +108,7 @@
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(15, 76, 129, 0.15);
       color: var(--text);
       background: #fff;
     }
@@ -117,8 +121,9 @@
 
     section {
       background: var(--card);
+      backdrop-filter: blur(4px);
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 20px;
       box-shadow: var(--shadow);
       padding: 28px;
       margin-top: 24px;
@@ -141,7 +146,7 @@
     }
 
     .item-title {
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 4px;
     }
 
@@ -156,8 +161,8 @@
     }
 
     .pub {
-      padding: 16px 0;
-      border-top: 1px solid var(--border);
+      padding: 18px 0;
+      border-top: 1px solid rgba(16, 32, 47, 0.09);
     }
 
     .pub:first-child {
@@ -167,19 +172,31 @@
 
     .pub-with-thumb {
       display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 16px;
+      grid-template-columns: 140px 1fr;
+      gap: 18px;
       align-items: center;
     }
 
+    .pub-thumb-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+
     .pub-thumb {
-      width: 90px;
-      height: 70px;
+      width: 140px;
+      height: 100px;
       object-fit: contain;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: #f8fafc;
-      padding: 4px;
+      border: 1px solid rgba(16, 32, 47, 0.12);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.78);
+      padding: 6px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .pub-thumb-link:hover .pub-thumb {
+      transform: scale(1.04);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
     }
 
     .pub-text {
@@ -187,7 +204,8 @@
     }
 
     .pub-title {
-      font-weight: 650;
+      font-weight: 700;
+      font-size: 1.02rem;
     }
 
     .pub-meta {
@@ -203,7 +221,7 @@
       text-decoration: none;
       color: var(--accent);
       margin-right: 14px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .pub-links a:hover {
@@ -213,8 +231,9 @@
     footer {
       text-align: center;
       margin-top: 28px;
-      color: var(--muted);
+      color: #eef4f8;
       font-size: 0.95rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     a {
@@ -222,6 +241,10 @@
     }
 
     @media (max-width: 760px) {
+      body {
+        background-attachment: scroll;
+      }
+
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
@@ -250,6 +273,11 @@
       }
 
       .pub-thumb {
+        width: 170px;
+        height: 120px;
+      }
+
+      .pub-thumb-link {
         margin: 0 auto 8px;
       }
     }
@@ -318,8 +346,8 @@
         </div>
 
         <div class="item">
-          <div class="item-title">Michigan State University</div>
-          <div class="item-subtitle">BSc, Computer Science (Minor) | 2015–2017</div>
+          <div class="item-title">BSc, Computer Science (Minor)</div>
+          <div class="item-subtitle">Michigan State University | 2015–2017</div>
         </div>
       </div>
 
@@ -327,7 +355,7 @@
         <h2>Academic Experience</h2>
 
         <div class="item">
-          <div class="item-title">Graduate Research Assistant, Computer Science & Engineering</div>
+          <div class="item-title">Graduate Research Assistant, Computer Science &amp; Engineering</div>
           <div class="item-subtitle">Michigan State University | Sep 2021 – Present</div>
         </div>
 
@@ -337,7 +365,7 @@
         </div>
 
         <div class="item">
-          <div class="item-title">Undergraduate Research Assistant, Computer Science & Engineering</div>
+          <div class="item-title">Undergraduate Research Assistant, Computer Science &amp; Engineering</div>
           <div class="item-subtitle">Michigan State University | Mar 2017 – May 2018</div>
         </div>
 
@@ -352,36 +380,39 @@
       <h2>Selected Publications</h2>
 
       <div class="pub pub-with-thumb">
-        <img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="Thumbnail for Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery" class="pub-thumb" />
+        <a class="pub-thumb-link" href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="Thumbnail for Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery" class="pub-thumb" />
+        </a>
         <div class="pub-text">
           <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</div>
           <div class="pub-meta">ICCV Workshops, 2025</div>
           <div class="pub-links">
-            <a href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">Image</a>
             <a href="https://openaccess.thecvf.com/content/ICCV2025W/CVAMD/html/Varghaei_Automated_Assessment_of_Aesthetic_Outcomes_in_Facial_Plastic_Surgery_ICCVW_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
           </div>
         </div>
       </div>
 
       <div class="pub pub-with-thumb">
-        <img src="images/Farsight.jpg" alt="Thumbnail for FarSight" class="pub-thumb" />
+        <a class="pub-thumb-link" href="images/Farsight.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="images/Farsight.jpg" alt="Thumbnail for FarSight" class="pub-thumb" />
+        </a>
         <div class="pub-text">
           <div class="pub-title">FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude</div>
           <div class="pub-meta">WACV, 2024</div>
           <div class="pub-links">
-            <a href="images/Farsight.jpg" target="_blank" rel="noopener noreferrer">Image</a>
             <a href="https://openaccess.thecvf.com/content/WACV2024/html/Liu_FarSight_A_Physics-Driven_Whole-Body_Biometric_System_at_Large_Distance_and_WACV_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
           </div>
         </div>
       </div>
 
       <div class="pub pub-with-thumb">
-        <img src="images/Beam.jpg" alt="Thumbnail for Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams" class="pub-thumb" />
+        <a class="pub-thumb-link" href="images/Beam.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="images/Beam.jpg" alt="Thumbnail for Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams" class="pub-thumb" />
+        </a>
         <div class="pub-text">
           <div class="pub-title">Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams</div>
           <div class="pub-meta">Journal of Computational and Nonlinear Dynamics, 2021</div>
           <div class="pub-links">
-            <a href="images/Beam.jpg" target="_blank" rel="noopener noreferrer">Image</a>
             <a href="https://asmedigitalcollection.asme.org/computationalnonlinear/article/16/11/111005/1119227/Anomalous-Nonlinear-Dynamics-Behavior-of" target="_blank" rel="noopener noreferrer">Paper</a>
           </div>
         </div>
