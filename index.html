@@ -30,6 +30,10 @@
       background: #0b1722;
     }
 
+    body {
+      position: relative;
+    }
+
     .bg-image {
       position: fixed;
       inset: 0;
@@ -300,7 +304,7 @@
   </style>
 </head>
 <body>
-  <img src="images/math.png" alt="" class="bg-image" />
+  <img src="images/math.png" alt="" class="bg-image">
   <div class="bg-overlay"></div>
 
   <div class="container">
@@ -318,7 +322,7 @@
       </div>
 
       <div class="hero">
-        <img src="IMG_1300.JPEG" alt="Portrait of Pegah Varghaei" class="profile-pic" />
+        <img src="IMG_1300.JPEG" alt="Portrait of Pegah Varghaei" class="profile-pic">
         <div class="hero-text">
           <p>
             I am a PhD student in Computer Science at Michigan State University and a member of the research group led by Dr. Arun Ross. My work spans biometrics, facial analysis, multimodal learning, and AI methods for aesthetic and medical image understanding.
@@ -400,7 +404,7 @@
 
       <div class="pub pub-with-thumb">
         <a class="pub-thumb-link" href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="Thumbnail for Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery" class="pub-thumb" />
+          <img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="Thumbnail for Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery" class="pub-thumb">
         </a>
         <div class="pub-text">
           <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</div>
@@ -413,7 +417,7 @@
 
       <div class="pub pub-with-thumb">
         <a class="pub-thumb-link" href="images/Farsight.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/Farsight.jpg" alt="Thumbnail for FarSight" class="pub-thumb" />
+          <img src="images/Farsight.jpg" alt="Thumbnail for FarSight" class="pub-thumb">
         </a>
         <div class="pub-text">
           <div class="pub-title">FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude</div>
@@ -426,414 +430,7 @@
 
       <div class="pub pub-with-thumb">
         <a class="pub-thumb-link" href="images/Beam.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/Beam.jpg" alt="Thumbnail for Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams" class="pub-thumb" />
-        </a>
-        <div class="pub-text">
-          <div class="pub-title">Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams</div>
-          <div class="pub-meta">Journal of Computational and Nonlinear Dynamics, 2021</div>
-          <div class="pub-links">
-            <a href="https://asmedigitalcollection.asme.org/computationalnonlinear/article/16/11/111005/1119227/Anomalous-Nonlinear-Dynamics-Behavior-of" target="_blank" rel="noopener noreferrer">Paper</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 Pegah Varghaei
-    </footer>
-  </div>
-</body>
-</html>      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    .bg-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(8, 18, 28, 0.44);
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .container {
-      max-width: 1020px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
-
-    header {
-      background: var(--card-strong);
-      backdrop-filter: blur(4px);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      padding: 36px 28px;
-      margin-bottom: 24px;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .name-block h1 {
-      margin: 0;
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    .name-block p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 1.03rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      margin-left: 18px;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 30px;
-      align-items: center;
-      margin-top: 28px;
-    }
-
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-    }
-
-    .hero-text p {
-      margin-top: 0;
-      margin-bottom: 14px;
-    }
-
-    .button-row a {
-      display: inline-block;
-      margin-right: 12px;
-      margin-top: 8px;
-      padding: 10px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid rgba(15, 76, 129, 0.15);
-      color: var(--text);
-      background: #fff;
-    }
-
-    .button-row a.primary {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    section {
-      background: var(--card);
-      backdrop-filter: blur(4px);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      padding: 28px;
-      margin-top: 24px;
-    }
-
-    h2 {
-      margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 1.35rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .item {
-      margin-bottom: 18px;
-    }
-
-    .item-title {
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .item-subtitle {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    ul {
-      margin: 8px 0 0;
-      padding-left: 20px;
-    }
-
-    .pub {
-      padding: 18px 0;
-      border-top: 1px solid rgba(16, 32, 47, 0.09);
-    }
-
-    .pub:first-child {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .pub-with-thumb {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .pub-thumb-link {
-      display: inline-block;
-      text-decoration: none;
-    }
-
-    .pub-thumb {
-      width: 140px;
-      height: 100px;
-      object-fit: contain;
-      border: 1px solid rgba(16, 32, 47, 0.12);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.78);
-      padding: 6px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .pub-thumb-link:hover .pub-thumb {
-      transform: scale(1.04);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
-    }
-
-    .pub-text {
-      min-width: 0;
-    }
-
-    .pub-title {
-      font-weight: 700;
-      font-size: 1.02rem;
-    }
-
-    .pub-meta {
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .pub-links {
-      margin-top: 8px;
-    }
-
-    .pub-links a {
-      text-decoration: none;
-      color: var(--accent);
-      margin-right: 14px;
-      font-weight: 600;
-    }
-
-    .pub-links a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 28px;
-      color: #eef4f8;
-      font-size: 0.95rem;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    }
-
-    a {
-      color: var(--accent);
-    }
-
-    @media (max-width: 760px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .profile-pic {
-        margin: 0 auto;
-      }
-
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 16px;
-      }
-
-      .pub-with-thumb {
-        grid-template-columns: 1fr;
-      }
-
-      .pub-thumb {
-        width: 170px;
-        height: 120px;
-      }
-
-      .pub-thumb-link {
-        margin: 0 auto 8px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <img src="images/math.png" alt="" class="bg-image" />
-  <div class="bg-overlay"></div>
-
-  <div class="container">
-    <header>
-      <div class="topbar">
-        <div class="name-block">
-          <h1>Pegah Varghaei</h1>
-          <p>PhD Student in Computer Science | Michigan State University</p>
-        </div>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="publications.html">Publications</a>
-          <a href="https://scholar.google.com/citations?user=f1Lxc7EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        </nav>
-      </div>
-
-      <div class="hero">
-        <img src="IMG_1300.JPEG" alt="Portrait of Pegah Varghaei" class="profile-pic" />
-        <div class="hero-text">
-          <p>
-            I am a PhD student in Computer Science at Michigan State University and a member of the research group led by Dr. Arun Ross. My work spans biometrics, facial analysis, multimodal learning, and AI methods for aesthetic and medical image understanding.
-          </p>
-          <p>
-            My recent research includes low-resolution person recognition, multimodal fusion of face and body cues, automated assessment of facial plastic surgery outcomes, and detection of manipulated or edited faces using vision-language and robustness-based methods.
-          </p>
-          <div class="button-row">
-            <a class="primary" href="publications.html">View Publications</a>
-            <a href="https://scholar.google.com/citations?user=f1Lxc7EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section>
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Biometrics and person recognition</li>
-        <li>Facial analysis and facial enhancement</li>
-        <li>Multimodal representation learning</li>
-        <li>AI for aesthetic medicine and surgical outcome analysis</li>
-        <li>Detection of manipulated and edited facial imagery</li>
-      </ul>
-    </section>
-
-    <section class="two-col">
-      <div>
-        <h2>Education</h2>
-
-        <div class="item">
-          <div class="item-title">Michigan State University</div>
-          <div class="item-subtitle">PhD, Computer Science | 2021–2026</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Michigan State University</div>
-          <div class="item-subtitle">MS, Mechanical Engineering | 2018–2020</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Michigan State University</div>
-          <div class="item-subtitle">BSc, Computational Mathematics | 2015–2017</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">BSc, Computer Science (Minor)</div>
-          <div class="item-subtitle">Michigan State University | 2015–2017</div>
-        </div>
-      </div>
-
-      <div>
-        <h2>Academic Experience</h2>
-
-        <div class="item">
-          <div class="item-title">Graduate Research Assistant, Computer Science &amp; Engineering</div>
-          <div class="item-subtitle">Michigan State University | Sep 2021 – Present</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Graduate Research Assistant, Mechanical Engineering</div>
-          <div class="item-subtitle">Michigan State University | Sep 2018 – Dec 2020</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Undergraduate Research Assistant, Computer Science &amp; Engineering</div>
-          <div class="item-subtitle">Michigan State University | Mar 2017 – May 2018</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Undergraduate Research Assistant, Mechanical Engineering</div>
-          <div class="item-subtitle">Michigan State University | Dec 2013 – Apr 2014</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Selected Publications</h2>
-
-      <div class="pub pub-with-thumb">
-        <a class="pub-thumb-link" href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="Thumbnail for Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery" class="pub-thumb" />
-        </a>
-        <div class="pub-text">
-          <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</div>
-          <div class="pub-meta">ICCV Workshops, 2025</div>
-          <div class="pub-links">
-            <a href="https://openaccess.thecvf.com/content/ICCV2025W/CVAMD/html/Varghaei_Automated_Assessment_of_Aesthetic_Outcomes_in_Facial_Plastic_Surgery_ICCVW_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub pub-with-thumb">
-        <a class="pub-thumb-link" href="images/Farsight.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/Farsight.jpg" alt="Thumbnail for FarSight" class="pub-thumb" />
-        </a>
-        <div class="pub-text">
-          <div class="pub-title">FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude</div>
-          <div class="pub-meta">WACV, 2024</div>
-          <div class="pub-links">
-            <a href="https://openaccess.thecvf.com/content/WACV2024/html/Liu_FarSight_A_Physics-Driven_Whole-Body_Biometric_System_at_Large_Distance_and_WACV_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub pub-with-thumb">
-        <a class="pub-thumb-link" href="images/Beam.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/Beam.jpg" alt="Thumbnail for Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams" class="pub-thumb" />
+          <img src="images/Beam.jpg" alt="Thumbnail for Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams" class="pub-thumb">
         </a>
         <div class="pub-text">
           <div class="pub-title">Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams</div>
