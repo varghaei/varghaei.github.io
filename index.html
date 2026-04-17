@@ -165,6 +165,27 @@
       padding-top: 0;
     }
 
+    .pub-with-thumb {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .pub-thumb {
+      width: 90px;
+      height: 70px;
+      object-fit: contain;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #f8fafc;
+      padding: 4px;
+    }
+
+    .pub-text {
+      min-width: 0;
+    }
+
     .pub-title {
       font-weight: 650;
     }
@@ -222,6 +243,14 @@
       nav a {
         margin-left: 0;
         margin-right: 16px;
+      }
+
+      .pub-with-thumb {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-thumb {
+        margin: 0 auto 8px;
       }
     }
   </style>
@@ -322,30 +351,39 @@
     <section>
       <h2>Selected Publications</h2>
 
-      <div class="pub">
-        <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</div>
-        <div class="pub-meta">ICCV Workshops, 2025</div>
-        <div class="pub-links">
-          <a href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">Image</a>
-          <a href="https://openaccess.thecvf.com/content/ICCV2025W/CVAMD/html/Varghaei_Automated_Assessment_of_Aesthetic_Outcomes_in_Facial_Plastic_Surgery_ICCVW_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
+      <div class="pub pub-with-thumb">
+        <img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="Thumbnail for Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery" class="pub-thumb" />
+        <div class="pub-text">
+          <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</div>
+          <div class="pub-meta">ICCV Workshops, 2025</div>
+          <div class="pub-links">
+            <a href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">Image</a>
+            <a href="https://openaccess.thecvf.com/content/ICCV2025W/CVAMD/html/Varghaei_Automated_Assessment_of_Aesthetic_Outcomes_in_Facial_Plastic_Surgery_ICCVW_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
+          </div>
         </div>
       </div>
 
-      <div class="pub">
-        <div class="pub-title">FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude</div>
-        <div class="pub-meta">WACV, 2024</div>
-        <div class="pub-links">
-          <a href="images/Farsight.jpg" target="_blank" rel="noopener noreferrer">Image</a>
-          <a href="https://openaccess.thecvf.com/content/WACV2024/html/Liu_FarSight_A_Physics-Driven_Whole-Body_Biometric_System_at_Large_Distance_and_WACV_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
+      <div class="pub pub-with-thumb">
+        <img src="images/Farsight.jpg" alt="Thumbnail for FarSight" class="pub-thumb" />
+        <div class="pub-text">
+          <div class="pub-title">FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude</div>
+          <div class="pub-meta">WACV, 2024</div>
+          <div class="pub-links">
+            <a href="images/Farsight.jpg" target="_blank" rel="noopener noreferrer">Image</a>
+            <a href="https://openaccess.thecvf.com/content/WACV2024/html/Liu_FarSight_A_Physics-Driven_Whole-Body_Biometric_System_at_Large_Distance_and_WACV_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
+          </div>
         </div>
       </div>
 
-      <div class="pub">
-        <div class="pub-title">Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams</div>
-        <div class="pub-meta">Journal of Computational and Nonlinear Dynamics, 2021</div>
-        <div class="pub-links">
-          <a href="images/Beam.jpg" target="_blank" rel="noopener noreferrer">Image</a>
-          <a href="https://asmedigitalcollection.asme.org/computationalnonlinear/article/16/11/111005/1119227/Anomalous-Nonlinear-Dynamics-Behavior-of" target="_blank" rel="noopener noreferrer">Paper</a>
+      <div class="pub pub-with-thumb">
+        <img src="images/Beam.jpg" alt="Thumbnail for Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams" class="pub-thumb" />
+        <div class="pub-text">
+          <div class="pub-title">Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams</div>
+          <div class="pub-meta">Journal of Computational and Nonlinear Dynamics, 2021</div>
+          <div class="pub-links">
+            <a href="images/Beam.jpg" target="_blank" rel="noopener noreferrer">Image</a>
+            <a href="https://asmedigitalcollection.asme.org/computationalnonlinear/article/16/11/111005/1119227/Anomalous-Nonlinear-Dynamics-Behavior-of" target="_blank" rel="noopener noreferrer">Paper</a>
+          </div>
         </div>
       </div>
     </section>
