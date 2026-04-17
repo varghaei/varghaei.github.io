@@ -2,92 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pegah Varghaei | Publications</title>
-  <meta name="description" content="Selected publications by Pegah Varghaei in biometrics, facial analysis, and computational methods." />
-  <meta name="author" content="Pegah Varghaei" />
+  <meta name="description" content="Selected publications by Pegah Varghaei in biometrics, facial analysis, and AI for aesthetic medicine." />
   <style>
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
-    header, main, footer {
-      max-width: 800px;
+
+    .container {
+      max-width: 920px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 32px 20px 60px;
     }
+
+    header, section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
     header {
-      background: #fff;
-      border-bottom: 1px solid #ddd;
+      padding: 34px 28px;
+      margin-bottom: 24px;
       text-align: center;
     }
-    header h1 {
+
+    h1 {
       margin: 0;
-      font-size: 2em;
-      font-weight: normal;
+      font-size: 2.2rem;
+      font-weight: 650;
     }
-    main section {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 20px;
-      margin-top: 20px;
+
+    .subtitle {
+      margin-top: 10px;
+      color: var(--muted);
     }
-    main section h2 {
-      margin-top: 0;
-      font-weight: normal;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #666;
-    }
-    ul {
-      padding-left: 20px;
-    }
+
     nav {
-      text-align: center;
+      margin-top: 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      margin: 0 12px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 28px;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .intro {
+      color: #374151;
+      margin-bottom: 20px;
+    }
+
+    .pub-list {
       margin-top: 10px;
     }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
+
+    .pub {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
     }
-    nav a:hover {
+
+    .pub:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .pub-title {
+      font-size: 1.08rem;
+      font-weight: 650;
+    }
+
+    .pub-authors,
+    .pub-venue {
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .pub-links {
+      margin-top: 8px;
+    }
+
+    .pub-links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 14px;
+      font-weight: 500;
+    }
+
+    .pub-links a:hover {
       text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Pegah Varghaei</h1>
-    <nav>
-      <a href="index.html">Home</a>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Pegah Varghaei</h1>
+      <div class="subtitle">Selected Publications</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="https://scholar.google.com/citations?user=f1Lxc7EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      </nav>
+    </header>
 
-  <main>
     <section>
       <h2>Publications</h2>
-      <p>
-        You can find a complete list of my publications on my
+      <p class="intro">
+        Below is a selected list of publications. For the most complete and up-to-date list, please visit my
         <a href="https://scholar.google.com/citations?user=f1Lxc7EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar profile</a>.
       </p>
-      <ul>
-        <li><strong>Anomalous nonlinear dynamics behavior of fractional viscoelastic beams</strong></li>
-        <li><strong>Farsight: A physics-driven whole-body biometric system at large distance and altitude</strong></li>
-      </ul>
-    </section>
-  </main>
 
-  <footer>
-    © 2026 Pegah Varghaei
-  </footer>
+      <div class="pub-list">
+        <div class="pub">
+          <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</div>
+          <div class="pub-authors">Pegah Varghaei, Kiran Abraham-Aggarwal, Manoj T. Abraham, Arun Ross</div>
+          <div class="pub-venue">Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops, 2025, pp. 939–948</div>
+          <div class="pub-links">
+            <a href="https://openaccess.thecvf.com/content/ICCV2025W/CVAMD/html/Varghaei_Automated_Assessment_of_Aesthetic_Outcomes_in_Facial_Plastic_Surgery_ICCVW_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Farsight: A physics-driven whole-body biometric system at large distance and altitude</div>
+          <div class="pub-authors">Pegah Varghaei, [add co-authors]</div>
+          <div class="pub-venue">[Add conference or journal], [Add year]</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Anomalous nonlinear dynamics behavior of fractional viscoelastic beams</div>
+          <div class="pub-authors">Pegah Varghaei, [add co-authors]</div>
+          <div class="pub-venue">[Add journal], [Add year]</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Pegah Varghaei
+    </footer>
+  </div>
 </body>
 </html>
