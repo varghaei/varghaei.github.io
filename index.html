@@ -2,95 +2,334 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pegah Varghaei</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pegah Varghaei | PhD Student at Michigan State University</title>
+  <meta name="description" content="Pegah Varghaei is a PhD student at Michigan State University working on biometrics, facial analysis, and AI for aesthetic medicine." />
   <style>
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
-    header, main, footer {
-      max-width: 800px;
+
+    .container {
+      max-width: 980px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 32px 20px 60px;
     }
+
     header {
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 36px 28px;
+      margin-bottom: 24px;
     }
-    header h1 {
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .name-block h1 {
       margin: 0;
-      font-size: 2em;
-      font-weight: normal;
+      font-size: 2.3rem;
+      font-weight: 650;
     }
-    main section {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 20px;
-      margin-top: 20px;
+
+    .name-block p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
     }
-    main section h2 {
-      margin-top: 0;
-      font-weight: normal;
-      color: #555;
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      margin-left: 18px;
+      font-weight: 500;
     }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 28px;
+    }
+
     .profile-pic {
-      display: block;
-      max-width: 150px;
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
       border-radius: 50%;
-      margin: 0 auto 20px;
+      border: 4px solid #fff;
+      box-shadow: var(--shadow);
     }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #666;
+
+    .hero-text p {
+      margin-top: 0;
+      margin-bottom: 14px;
     }
+
+    .button-row a {
+      display: inline-block;
+      margin-right: 12px;
+      margin-top: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: #fff;
+    }
+
+    .button-row a.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-top: 24px;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.35rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .item {
+      margin-bottom: 18px;
+    }
+
+    .item-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .item-subtitle {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
     ul {
+      margin: 8px 0 0;
       padding-left: 20px;
     }
-    nav {
-      text-align: center;
-      margin-top: 10px;
+
+    .pub {
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
     }
-    nav a {
-      margin: 0 10px;
+
+    .pub:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .pub-title {
+      font-weight: 650;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .pub-links a {
       text-decoration: none;
-      color: #333;
+      color: var(--accent);
+      margin-right: 14px;
+      font-weight: 500;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .profile-pic {
+        margin: 0 auto;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Pegah Varghaei</h1>
-    <nav>
-      <a href="publications.html">Publications</a>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <div class="topbar">
+        <div class="name-block">
+          <h1>Pegah Varghaei</h1>
+          <p>PhD Student in Computer Science | Michigan State University</p>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="publications.html">Publications</a>
+          <a href="https://scholar.google.com/citations?user=f1Lxc7EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        </nav>
+      </div>
 
-  <main>
+      <div class="hero">
+        <img src="IMG_1300.JPEG" alt="Portrait of Pegah Varghaei" class="profile-pic" />
+        <div class="hero-text">
+          <p>
+            I am a PhD student in Computer Science at Michigan State University and a member of the research group led by Dr. Arun Ross. My work spans biometrics, facial analysis, multimodal learning, and AI methods for aesthetic and medical image understanding.
+          </p>
+          <p>
+            My recent research includes low-resolution person recognition, multimodal fusion of face and body cues, automated assessment of facial plastic surgery outcomes, and detection of manipulated or edited faces using vision-language and robustness-based methods.
+          </p>
+          <div class="button-row">
+            <a class="primary" href="publications.html">View Publications</a>
+            <a href="https://scholar.google.com/citations?user=f1Lxc7EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <section>
-      <h2>About Me</h2>
-      <img src="IMG_1300.JPEG" alt="My Photo" class="profile-pic" />
-      <p>
-        I am a third-year PhD student in the <a href="https://iprobe.cse.msu.edu" target="_blank" rel="noopener noreferrer">IPRoBe Lab</a> under the supervision of Dr. Arun Ross. With a bachelor’s degree in Mathematics and a master’s in Mechanical Engineering, I bring a strong analytical and interdisciplinary perspective to my research.
-      </p>
-      <p>
-        Over the course of my work, I have contributed to a variety of projects involving facial enhancement, video frame selection, and multimodal fusion of face and body biometric data. Currently, my research focuses on developing AI-based frameworks to support cosmetic surgery procedures, advancing facial aesthetics enhancement through innovative computational methods.
-      </p>
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Biometrics and person recognition</li>
+        <li>Facial analysis and facial enhancement</li>
+        <li>Multimodal representation learning</li>
+        <li>AI for aesthetic medicine and surgical outcome analysis</li>
+        <li>Detection of manipulated and edited facial imagery</li>
+      </ul>
     </section>
-  </main>
 
-  <footer>
-    © 2024 Pegah Varghaei
-  </footer>
+    <section class="two-col">
+      <div>
+        <h2>Education</h2>
+
+        <div class="item">
+          <div class="item-title">Michigan State University</div>
+          <div class="item-subtitle">PhD, Computer Science | 2021–2026</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Michigan State University</div>
+          <div class="item-subtitle">MS, Mechanical Engineering | 2018–2020</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Michigan State University</div>
+          <div class="item-subtitle">BSc, Computational Mathematics | 2015–2017</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Michigan State University</div>
+          <div class="item-subtitle">BSc, Computer Science (Minor) | 2015–2017</div>
+        </div>
+      </div>
+
+      <div>
+        <h2>Academic Experience</h2>
+
+        <div class="item">
+          <div class="item-title">Graduate Research Assistant, Computer Science & Engineering</div>
+          <div class="item-subtitle">Michigan State University | Sep 2021 – Present</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Graduate Research Assistant, Mechanical Engineering</div>
+          <div class="item-subtitle">Michigan State University | Sep 2018 – Dec 2020</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Undergraduate Research Assistant, Computer Science & Engineering</div>
+          <div class="item-subtitle">Michigan State University | Mar 2017 – May 2018</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Publications</h2>
+
+      <div class="pub">
+        <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</div>
+        <div class="pub-meta">Pegah Varghaei, Kiran Abraham-Aggarwal, Manoj T. Abraham, Arun Ross</div>
+        <div class="pub-meta">ICCV Workshops, 2025</div>
+        <div class="pub-links">
+          <a href="https://openaccess.thecvf.com/content/ICCV2025W/CVAMD/html/Varghaei_Automated_Assessment_of_Aesthetic_Outcomes_in_Facial_Plastic_Surgery_ICCVW_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Farsight: A physics-driven whole-body biometric system at large distance and altitude</div>
+        <div class="pub-meta">Add co-authors and venue here</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Anomalous nonlinear dynamics behavior of fractional viscoelastic beams</div>
+        <div class="pub-meta">Add co-authors and venue here</div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Pegah Varghaei
+    </footer>
+  </div>
 </body>
 </html>
