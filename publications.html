@@ -28,11 +28,9 @@
       line-height: 1.7;
       background-color: #0b1722;
       background-image:
-        linear-gradient(rgba(8, 18, 28, 0.68), rgba(8, 18, 28, 0.68)),
-        url("images/math.png");
-      background-position: center top;
-      background-size: cover;
-      background-repeat: no-repeat;
+        radial-gradient(1200px 600px at 15% 0%, rgba(47, 143, 216, 0.28), transparent 60%),
+        radial-gradient(900px 500px at 85% 100%, rgba(15, 76, 129, 0.35), transparent 60%),
+        linear-gradient(180deg, #0b1722 0%, #0e2238 50%, #0b1722 100%);
       background-attachment: fixed;
     }
 
@@ -342,7 +340,6 @@
       <div class="filters" role="tablist" aria-label="Filter publications">
         <button class="active" data-filter="all">All</button>
         <button data-filter="published">Published</button>
-        <button data-filter="review">Under review</button>
         <button data-filter="first">First author</button>
       </div>
 
@@ -405,37 +402,7 @@
       </div>
 
       <h2 id="review-heading" style="margin-top: 26px;">Under Review</h2>
-      <p class="section-note" id="review-note">Manuscripts currently under peer review (2026). Titles and details may change before publication.</p>
-
-      <div class="pub-card no-image" data-status="review" data-first="yes">
-        <div>
-          <div class="pub-title">Identity-Preserving Geometry-Constrained Synthetic Rhinoplasty in Facial Photographs <span class="badge review">Under review</span></div>
-          <div class="pub-authors"><strong>Pegah Varghaei</strong>, Manoj T. Abraham, Arun Ross</div>
-          <div class="pub-summary">
-            A generative method for editing facial photographs that preserves identity and respects facial geometry, with multi-objective ranking of generated outputs.
-          </div>
-        </div>
-      </div>
-
-      <div class="pub-card no-image" data-status="review" data-first="yes">
-        <div>
-          <div class="pub-title">Impact of Digital Editing on the Evaluation of Facial Plastic Surgery Outcomes <span class="badge review">Under review</span></div>
-          <div class="pub-authors"><strong>Pegah Varghaei</strong>, Manoj T. Abraham, Arun Ross</div>
-          <div class="pub-summary">
-            A study of how digitally edited photographs distort automated outcome evaluation, and when such results should not be trusted.
-          </div>
-        </div>
-      </div>
-
-      <div class="pub-card no-image" data-status="review" data-first="yes">
-        <div>
-          <div class="pub-title">Is It Really the Surgery? Disentangling Surgical and Non-Surgical Factors in Face Recognition <span class="badge review">Under review</span></div>
-          <div class="pub-authors"><strong>Pegah Varghaei</strong>, Manoj T. Abraham, Arun Ross</div>
-          <div class="pub-summary">
-            An analysis separating the effects of surgical changes from non-surgical factors on face recognition performance after facial plastic surgery.
-          </div>
-        </div>
-      </div>
+      <p class="section-note" id="review-note">Three first-author manuscripts are currently under peer review. Titles and details will be added upon publication.</p>
     </section>
 
     <footer>
@@ -525,25 +492,18 @@
       /* ---- Filter tabs ---- */
       var buttons = document.querySelectorAll('.filters button');
       var cards = document.querySelectorAll('.pub-card');
-      var reviewHeading = document.getElementById('review-heading');
-      var reviewNote = document.getElementById('review-note');
 
       buttons.forEach(function (btn) {
         btn.addEventListener('click', function () {
           buttons.forEach(function (b) { b.classList.remove('active'); });
           btn.classList.add('active');
           var f = btn.getAttribute('data-filter');
-          var showReviewHeading = false;
           cards.forEach(function (c) {
             var status = c.getAttribute('data-status');
             var first = c.getAttribute('data-first') === 'yes';
-            var show = (f === 'all') || (f === 'published' && status === 'published') ||
-                       (f === 'review' && status === 'review') || (f === 'first' && first);
+            var show = (f === 'all') || (f === 'published' && status === 'published') || (f === 'first' && first);
             c.classList.toggle('hidden', !show);
-            if (show && status === 'review') showReviewHeading = true;
           });
-          reviewHeading.style.display = showReviewHeading ? '' : 'none';
-          reviewNote.style.display = showReviewHeading ? '' : 'none';
         });
       });
 
