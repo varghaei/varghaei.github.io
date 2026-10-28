@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pegah Varghaei | PhD Student at Michigan State University</title>
-  <meta name="description" content="Pegah Varghaei is a PhD student at Michigan State University working on biometrics, facial analysis, and AI for aesthetic medicine." />
+  <title>Pegah Varghaei | Computer Vision and Generative AI Researcher</title>
+  <meta name="description" content="Pegah Varghaei is a PhD candidate in Computer Science and Engineering at Michigan State University working on computer vision, biometrics, generative AI, and vision-language models." />
   <style>
     :root {
       --card: rgba(255, 255, 255, 0.92);
@@ -12,140 +12,229 @@
       --text: #10202f;
       --muted: #52606d;
       --accent: #0f4c81;
+      --accent-2: #2f8fd8;
       --border: rgba(255, 255, 255, 0.35);
       --shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html, body {
+    html { scroll-behavior: smooth; }
+
+    body {
       margin: 0;
-      padding: 0;
-      min-height: 100%;
       font-family: Arial, sans-serif;
       color: var(--text);
       line-height: 1.7;
-      background: #0b1722;
+      background-color: #0b1722;
+      background-image:
+        linear-gradient(rgba(8, 18, 28, 0.55), rgba(8, 18, 28, 0.55)),
+        url("images/math.png");
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
-    body {
-      position: relative;
-    }
-
-    .bg-image {
+    /* Animated network background */
+    #bg-canvas {
       position: fixed;
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    .bg-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(8, 18, 28, 0.44);
-      z-index: -1;
+      z-index: 0;
       pointer-events: none;
     }
 
     .container {
+      position: relative;
+      z-index: 1;
       max-width: 1020px;
       margin: 0 auto;
       padding: 32px 20px 60px;
-      position: relative;
-      z-index: 1;
     }
 
     header {
       background: var(--card-strong);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
       border: 1px solid var(--border);
       border-radius: 20px;
       box-shadow: var(--shadow);
       padding: 36px 28px;
       margin-bottom: 24px;
+      animation: rise 0.9s ease both;
     }
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .name-block h1 {
-      margin: 0;
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    .name-block p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 1.03rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      margin-left: 18px;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: var(--accent);
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 30px;
+      grid-template-columns: 170px 1fr;
+      gap: 28px;
       align-items: center;
-      margin-top: 28px;
     }
 
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
+    .photo-wrap {
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
+      padding: 4px;
+      background: conic-gradient(from 0deg, var(--accent), var(--accent-2), #7fc3ff, var(--accent));
+      animation: spin 12s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
       border: 4px solid #fff;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      display: block;
+      animation: spin 12s linear infinite reverse;
     }
 
-    .hero-text p {
-      margin-top: 0;
-      margin-bottom: 14px;
+    h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      background: linear-gradient(90deg, var(--text), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .button-row a {
-      display: inline-block;
-      margin-right: 12px;
+    .subtitle {
       margin-top: 8px;
-      padding: 10px 16px;
-      border-radius: 10px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .subtitle a {
+      color: var(--accent);
       text-decoration: none;
       font-weight: 600;
-      border: 1px solid rgba(15, 76, 129, 0.15);
-      color: var(--text);
-      background: #fff;
     }
 
-    .button-row a.primary {
+    .typed-line {
+      margin-top: 6px;
+      min-height: 1.8em;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1.02rem;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.05em;
       background: var(--accent);
-      color: white;
-      border-color: var(--accent);
+      margin-left: 3px;
+      vertical-align: -0.15em;
+      animation: blink 1s steps(2) infinite;
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .links {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .links a {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 76, 129, 0.35);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(15, 76, 129, 0.06);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .links a:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(15, 76, 129, 0.3);
+    }
+
+    nav {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(16, 32, 47, 0.1);
+      text-align: center;
+    }
+
+    nav a {
+      position: relative;
+      text-decoration: none;
+      color: var(--text);
+      margin: 0 12px;
+      font-weight: 600;
+      padding-bottom: 3px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    nav a:hover::after, nav a.active::after { transform: scaleX(1); }
+    nav a:hover, nav a.active { color: var(--accent); }
+
+    /* Stats strip */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: var(--card);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 18px 12px;
+      text-align: center;
+      transition: transform 0.25s ease;
+    }
+
+    .stat:hover { transform: translateY(-4px); }
+
+    .stat .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 4px;
     }
 
     section {
       background: var(--card);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
       border: 1px solid var(--border);
       border-radius: 20px;
       box-shadow: var(--shadow);
@@ -153,11 +242,26 @@
       margin-top: 24px;
     }
 
-    h2 {
-      margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 1.35rem;
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      color: var(--accent);
+    }
+
+    p { margin: 0 0 12px; }
+    p:last-child { margin-bottom: 0; }
 
     .two-col {
       display: grid;
@@ -165,92 +269,142 @@
       gap: 24px;
     }
 
-    .item {
-      margin-bottom: 18px;
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
     }
 
-    .item-title {
-      font-weight: 700;
-      margin-bottom: 4px;
+    .research-item {
+      padding: 18px;
+      border-radius: 14px;
+      background: rgba(15, 76, 129, 0.05);
+      border: 1px solid rgba(15, 76, 129, 0.12);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
-    .item-subtitle {
+    .research-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 26px rgba(15, 76, 129, 0.18);
+      border-color: rgba(15, 76, 129, 0.35);
+    }
+
+    .research-item .icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .research-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .research-item p {
+      margin: 0;
       color: var(--muted);
-      font-size: 0.97rem;
+      font-size: 0.96rem;
     }
 
-    ul {
-      margin: 8px 0 0;
-      padding-left: 20px;
-    }
+    ul.clean { list-style: none; padding: 0; margin: 0; }
 
-    .pub {
-      padding: 18px 0;
+    ul.clean li {
+      padding: 10px 0;
       border-top: 1px solid rgba(16, 32, 47, 0.09);
     }
 
-    .pub:first-child {
-      border-top: none;
-      padding-top: 0;
-    }
+    ul.clean li:first-child { border-top: none; padding-top: 0; }
 
-    .pub-with-thumb {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .pub-thumb-link {
+    .date {
       display: inline-block;
-      text-decoration: none;
-    }
-
-    .pub-thumb {
-      width: 140px;
-      height: 100px;
-      object-fit: contain;
-      border: 1px solid rgba(16, 32, 47, 0.12);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.78);
-      padding: 6px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .pub-thumb-link:hover .pub-thumb {
-      transform: scale(1.04);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
-    }
-
-    .pub-text {
-      min-width: 0;
-    }
-
-    .pub-title {
-      font-weight: 700;
-      font-size: 1.02rem;
-    }
-
-    .pub-meta {
+      min-width: 86px;
       color: var(--muted);
-      margin-top: 4px;
+      font-weight: 600;
+      font-size: 0.93rem;
     }
 
-    .pub-links {
-      margin-top: 8px;
+    .pub {
+      padding: 14px 12px;
+      margin: 0 -12px;
+      border-radius: 12px;
+      border-top: 1px solid rgba(16, 32, 47, 0.09);
+      transition: background 0.2s ease;
     }
+
+    .pub:hover { background: rgba(15, 76, 129, 0.05); }
+    .pub:first-of-type { border-top: none; }
+
+    .pub-title { font-weight: 700; line-height: 1.4; }
+
+    .pub-meta { color: var(--muted); font-size: 0.96rem; }
+    .pub-meta strong { color: var(--text); }
 
     .pub-links a {
-      text-decoration: none;
       color: var(--accent);
-      margin-right: 14px;
+      text-decoration: none;
       font-weight: 600;
+      margin-right: 12px;
+      font-size: 0.95rem;
     }
 
-    .pub-links a:hover {
-      text-decoration: underline;
+    .pub-links a:hover { text-decoration: underline; }
+
+    .badge {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 1px 9px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      vertical-align: middle;
+      background: #fff4d6;
+      color: #7a4b00;
+      border: 1px solid #f1d58a;
     }
+
+    .more-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .more-link:hover { text-decoration: underline; }
+
+    .degree { font-weight: 700; }
+    .degree-meta { color: var(--muted); font-size: 0.96rem; }
+
+    .contact a { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+    #to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    #to-top.show { opacity: 1; transform: translateY(0); }
 
     footer {
       text-align: center;
@@ -260,191 +414,328 @@
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
-    a {
-      color: var(--accent);
+    @media (max-width: 760px) {
+      body { background-attachment: scroll; }
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .photo-wrap { margin: 0 auto; }
+      .links { justify-content: center; }
+      .two-col { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      h1 { font-size: 2rem; }
     }
 
-    @media (max-width: 760px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .profile-pic {
-        margin: 0 auto;
-      }
-
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 16px;
-      }
-
-      .pub-with-thumb {
-        grid-template-columns: 1fr;
-      }
-
-      .pub-thumb {
-        width: 170px;
-        height: 120px;
-      }
-
-      .pub-thumb-link {
-        margin: 0 auto 8px;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
-  <img src="images/math.png" alt="" class="bg-image">
-  <div class="bg-overlay"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <div class="container">
     <header>
-      <div class="topbar">
-        <div class="name-block">
-          <h1>Pegah Varghaei</h1>
-          <p>PhD Student in Computer Science | Michigan State University</p>
-        </div>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="publications.html">Publications</a>
-          <a href="https://scholar.google.com/citations?user=f1Lxc7EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        </nav>
-      </div>
-
       <div class="hero">
-        <img src="IMG_1300.JPEG" alt="Portrait of Pegah Varghaei" class="profile-pic">
-        <div class="hero-text">
-          <p>
-            I am a PhD student in Computer Science at Michigan State University and a member of the research group led by Dr. Arun Ross. My work spans biometrics, facial analysis, multimodal learning, and AI methods for aesthetic and medical image understanding.
-          </p>
-          <p>
-            My recent research includes low-resolution person recognition, multimodal fusion of face and body cues, automated assessment of facial plastic surgery outcomes, and detection of manipulated or edited faces using vision-language and robustness-based methods.
-          </p>
-          <div class="button-row">
-            <a class="primary" href="publications.html">View Publications</a>
+        <div class="photo-wrap">
+          <img src="images/pegah.jpg" alt="Pegah Varghaei" class="photo" onerror="this.parentNode.style.display='none'" />
+        </div>
+        <div>
+          <h1>Pegah Varghaei</h1>
+          <div class="subtitle">
+            PhD Candidate, Computer Science and Engineering<br />
+            Michigan State University, advised by <a href="https://www.cse.msu.edu/~rossarun/" target="_blank" rel="noopener noreferrer">Prof. Arun Ross</a>
+          </div>
+          <div class="typed-line"><span id="typed"></span><span class="cursor"></span></div>
+          <div class="links">
+            <a href="mailto:varghaei@msu.edu">Email</a>
             <a href="https://scholar.google.com/citations?user=f1Lxc7EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="https://github.com/varghaei" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/pegah-varghaei-7724b0146/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
       </div>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="#research">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <section>
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Biometrics and person recognition</li>
-        <li>Facial analysis and facial enhancement</li>
-        <li>Multimodal representation learning</li>
-        <li>AI for aesthetic medicine and surgical outcome analysis</li>
-        <li>Detection of manipulated and edited facial imagery</li>
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-count="3">0</div><div class="label">Peer-reviewed papers</div></div>
+      <div class="stat reveal"><div class="num" data-count="3">0</div><div class="label">First-author papers under review</div></div>
+      <div class="stat reveal"><div class="num" data-count="1">0</div><div class="label">Best Student Paper award</div></div>
+      <div class="stat reveal"><div class="num" data-count="7000" data-suffix="+">0</div><div class="label">Images curated for research</div></div>
+    </div>
+
+    <section id="about" class="reveal">
+      <h2>About</h2>
+      <p>
+        I am a PhD candidate in Computer Science and Engineering at Michigan State University, where I work on computer vision, biometrics, and generative AI. My research focuses on recognizing and analyzing people from images and video, including face and whole-body recognition at long range, and on generative and vision-language models for facial image analysis. I hold an MS in Mechanical Engineering and a BS in Computational Mathematics, both from Michigan State University.
+      </p>
+      <p>
+        My first-author paper at the ICCV 2025 Workshops received the Best Student Paper award. I am a coauthor of the FarSight whole-body biometric system (WACV 2024), developed under the IARPA BRIAR program, and I have three first-author manuscripts currently under review. I expect to graduate in December 2027 and am interested in research internships in computer vision and generative AI.
+      </p>
+    </section>
+
+    <section id="research" class="reveal">
+      <h2>Research</h2>
+      <div class="research-grid">
+        <div class="research-item">
+          <div class="icon">01</div>
+          <h3>Facial analysis and evaluation</h3>
+          <p>Interpretable measurement of facial change from photographs, including symmetry, perceived age, and identity preservation, validated with statistical testing on the largest curated dataset of its kind.</p>
+        </div>
+        <div class="research-item">
+          <div class="icon">02</div>
+          <h3>Generative AI and vision-language models</h3>
+          <p>Identity-preserving, geometry-constrained generative editing of facial images, and the use of large language and vision-language models to generate and classify images.</p>
+        </div>
+        <div class="research-item">
+          <div class="icon">03</div>
+          <h3>Long-range biometrics</h3>
+          <p>Face and body fusion, quality-based video frame selection, and multi-frame enhancement for recognizing people at distances up to 1,000 m and altitudes up to 200 m, using petabyte-scale video.</p>
+        </div>
+        <div class="research-item">
+          <div class="icon">04</div>
+          <h3>Trustworthy evaluation</h3>
+          <p>How digital editing and non-surgical factors distort automated assessment and face recognition, and when model outputs should not be trusted.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="reveal">
+      <h2>Selected Publications</h2>
+
+      <div class="pub">
+        <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery <span class="badge">Best Student Paper</span></div>
+        <div class="pub-meta"><strong>Pegah Varghaei</strong>, Kiran Abraham-Aggarwal, Manoj T. Abraham, Arun Ross. ICCV Workshops, 2025.</div>
+        <div class="pub-links">
+          <a href="https://openaccess.thecvf.com/content/ICCV2025W/CVAMD/html/Varghaei_Automated_Assessment_of_Aesthetic_Outcomes_in_Facial_Plastic_Surgery_ICCVW_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a href="https://arxiv.org/abs/2508.13363" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="https://github.com/varghaei/face-aesthetics-analysis" target="_blank" rel="noopener noreferrer">Code</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude</div>
+        <div class="pub-meta">Feng Liu, Ryan Ashbaugh, Nicholas Chimitt, Najmul Hassan, Ali Hassani, Ajay Jaiswal, Minchul Kim, Zhiyuan Mao, Christopher Perry, Zhiyuan Ren, Yiyang Su, <strong>Pegah Varghaei</strong>, et al. WACV, 2024.</div>
+        <div class="pub-links">
+          <a href="https://openaccess.thecvf.com/content/WACV2024/html/Liu_FarSight_A_Physics-Driven_Whole-Body_Biometric_System_at_Large_Distance_and_WACV_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a href="https://arxiv.org/abs/2312.08603" target="_blank" rel="noopener noreferrer">arXiv</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams</div>
+        <div class="pub-meta">Jorge L. Suzuki, Ehsan Kharazmi, <strong>Pegah Varghaei</strong>, Maryam Naghibolhosseini, Mohsen Zayernouri. Journal of Computational and Nonlinear Dynamics, 2021.</div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1115/1.4052286" target="_blank" rel="noopener noreferrer">DOI</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Three first-author manuscripts under review (2026)</div>
+        <div class="pub-meta">Identity-preserving synthetic rhinoplasty, the impact of digital editing on outcome evaluation, and disentangling surgical and non-surgical factors in face recognition.</div>
+      </div>
+
+      <a class="more-link" href="publications.html">Full publication list &rarr;</a>
+    </section>
+
+    <section id="news" class="reveal">
+      <h2>News</h2>
+      <ul class="clean">
+        <li><span class="date">2026</span> Three first-author manuscripts submitted for review.</li>
+        <li><span class="date">Oct 2025</span> <em>Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</em> received the Best Student Paper award at the ICCV 2025 Workshops.</li>
+        <li><span class="date">2025</span> Awarded the Graduate School Research and Travel Fellowship, Michigan State University.</li>
+        <li><span class="date">Jan 2024</span> FarSight published at WACV 2024.</li>
       </ul>
     </section>
 
-    <section class="two-col">
-      <div>
+    <div class="two-col">
+      <section id="education" class="reveal">
         <h2>Education</h2>
+        <ul class="clean">
+          <li>
+            <div class="degree">PhD, Computer Science and Engineering</div>
+            <div class="degree-meta">Michigan State University, 2021 &ndash; present (expected December 2027)<br />Advisor: Prof. Arun Ross</div>
+          </li>
+          <li>
+            <div class="degree">MS, Mechanical Engineering</div>
+            <div class="degree-meta">Michigan State University, 2018 &ndash; 2020<br />Advisor: Prof. Mohsen Zayernouri</div>
+          </li>
+          <li>
+            <div class="degree">BS, Computational Mathematics</div>
+            <div class="degree-meta">Michigan State University, 2015 &ndash; 2017<br />Minor in Computer Science and Engineering</div>
+          </li>
+        </ul>
+      </section>
 
-        <div class="item">
-          <div class="item-title">Michigan State University</div>
-          <div class="item-subtitle">PhD, Computer Science | 2021–2026</div>
-        </div>
+      <section id="teaching" class="reveal">
+        <h2>Teaching and Service</h2>
+        <ul class="clean">
+          <li>
+            <div class="degree">Teaching Assistant, Michigan State University</div>
+            <div class="degree-meta">CSE 331 Algorithms and Data Structures, CSE 802 Pattern Recognition, CSE 300 Social and Ethical Issues in Computing, CSE 231 Introduction to Programming, CSE 102 Algorithmic Thinking and Programming</div>
+          </li>
+          <li>
+            <div class="degree">Board Member, Iranian Students Association</div>
+            <div class="degree-meta">Michigan State University, 2024 &ndash; present</div>
+          </li>
+          <li>
+            <div class="degree">Volunteer Mentor, Spartan Girls Summer Camp</div>
+            <div class="degree-meta">2023 &ndash; present</div>
+          </li>
+        </ul>
+      </section>
+    </div>
 
-        <div class="item">
-          <div class="item-title">Michigan State University</div>
-          <div class="item-subtitle">MS, Mechanical Engineering | 2018–2020</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Michigan State University</div>
-          <div class="item-subtitle">BSc, Computational Mathematics | 2015–2017</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">BSc, Computer Science (Minor)</div>
-          <div class="item-subtitle">Michigan State University | 2015–2017</div>
-        </div>
-      </div>
-
-      <div>
-        <h2>Academic Experience</h2>
-
-        <div class="item">
-          <div class="item-title">Graduate Research Assistant, Computer Science &amp; Engineering</div>
-          <div class="item-subtitle">Michigan State University | Sep 2021 – Present</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Graduate Research Assistant, Mechanical Engineering</div>
-          <div class="item-subtitle">Michigan State University | Sep 2018 – Dec 2020</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Undergraduate Research Assistant, Computer Science &amp; Engineering</div>
-          <div class="item-subtitle">Michigan State University | Mar 2017 – May 2018</div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">Undergraduate Research Assistant, Mechanical Engineering</div>
-          <div class="item-subtitle">Michigan State University | Dec 2013 – Apr 2014</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Selected Publications</h2>
-
-      <div class="pub pub-with-thumb">
-        <a class="pub-thumb-link" href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="Thumbnail for Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery" class="pub-thumb">
-        </a>
-        <div class="pub-text">
-          <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</div>
-          <div class="pub-meta">ICCV Workshops, 2025</div>
-          <div class="pub-links">
-            <a href="https://openaccess.thecvf.com/content/ICCV2025W/CVAMD/html/Varghaei_Automated_Assessment_of_Aesthetic_Outcomes_in_Facial_Plastic_Surgery_ICCVW_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub pub-with-thumb">
-        <a class="pub-thumb-link" href="images/Farsight.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/Farsight.jpg" alt="Thumbnail for FarSight" class="pub-thumb">
-        </a>
-        <div class="pub-text">
-          <div class="pub-title">FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude</div>
-          <div class="pub-meta">WACV, 2024</div>
-          <div class="pub-links">
-            <a href="https://openaccess.thecvf.com/content/WACV2024/html/Liu_FarSight_A_Physics-Driven_Whole-Body_Biometric_System_at_Large_Distance_and_WACV_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub pub-with-thumb">
-        <a class="pub-thumb-link" href="images/Beam.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="images/Beam.jpg" alt="Thumbnail for Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams" class="pub-thumb">
-        </a>
-        <div class="pub-text">
-          <div class="pub-title">Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams</div>
-          <div class="pub-meta">Journal of Computational and Nonlinear Dynamics, 2021</div>
-          <div class="pub-links">
-            <a href="https://asmedigitalcollection.asme.org/computationalnonlinear/article/16/11/111005/1119227/Anomalous-Nonlinear-Dynamics-Behavior-of" target="_blank" rel="noopener noreferrer">Paper</a>
-          </div>
-        </div>
-      </div>
+    <section id="contact" class="contact reveal">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:varghaei@msu.edu">varghaei@msu.edu</a><br />
+        Department of Computer Science and Engineering, Michigan State University, East Lansing, MI
+      </p>
     </section>
 
     <footer>
-      © 2026 Pegah Varghaei
+      &copy; 2026 Pegah Varghaei
     </footer>
   </div>
+
+  <button id="to-top" aria-label="Back to top" title="Back to top">&uarr;</button>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---- Animated network background ---- */
+      var canvas = document.getElementById('bg-canvas');
+      var ctx = canvas.getContext('2d');
+      var nodes = [];
+      var W, H;
+
+      function resize() {
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+
+      function makeNodes() {
+        nodes = [];
+        var n = Math.min(90, Math.floor((W * H) / 16000));
+        for (var i = 0; i < n; i++) {
+          nodes.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - 0.5) * 0.35,
+            vy: (Math.random() - 0.5) * 0.35,
+            r: 1.2 + Math.random() * 1.8
+          });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < nodes.length; i++) {
+          var a = nodes[i];
+          a.x += a.vx; a.y += a.vy;
+          if (a.x < 0 || a.x > W) a.vx *= -1;
+          if (a.y < 0 || a.y > H) a.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(150, 200, 255, 0.75)';
+          ctx.fill();
+          for (var j = i + 1; j < nodes.length; j++) {
+            var b = nodes[j];
+            var dx = a.x - b.x, dy = a.y - b.y;
+            var d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 130) {
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.strokeStyle = 'rgba(150, 200, 255,' + (0.28 * (1 - d / 130)) + ')';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+
+      resize();
+      makeNodes();
+      window.addEventListener('resize', function () { resize(); makeNodes(); });
+      if (!reduced) draw();
+
+      /* ---- Typewriter line ---- */
+      var phrases = [
+        'Computer Vision',
+        'Biometrics and Face Recognition',
+        'Generative AI',
+        'Vision-Language Models',
+        'Trustworthy Evaluation'
+      ];
+      var el = document.getElementById('typed');
+      var pi = 0, ci = 0, deleting = false;
+
+      function type() {
+        var word = phrases[pi];
+        if (!deleting) {
+          el.textContent = word.slice(0, ++ci);
+          if (ci === word.length) { deleting = true; setTimeout(type, 1600); return; }
+          setTimeout(type, 60);
+        } else {
+          el.textContent = word.slice(0, --ci);
+          if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+          setTimeout(type, 35);
+        }
+      }
+      if (reduced) { el.textContent = phrases.join(' · '); } else { type(); }
+
+      /* ---- Scroll reveal + counters ---- */
+      function countUp(node) {
+        var target = parseInt(node.getAttribute('data-count'), 10);
+        var suffix = node.getAttribute('data-suffix') || '';
+        var start = null, dur = 1200;
+        function step(ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          node.textContent = Math.round(target * eased).toLocaleString() + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      var revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !reduced) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              e.target.querySelectorAll('[data-count]').forEach(countUp);
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        revealEls.forEach(function (r) { io.observe(r); });
+      } else {
+        revealEls.forEach(function (r) {
+          r.classList.add('visible');
+          r.querySelectorAll('[data-count]').forEach(function (n) {
+            n.textContent = parseInt(n.getAttribute('data-count'), 10).toLocaleString() + (n.getAttribute('data-suffix') || '');
+          });
+        });
+      }
+
+      /* ---- Back to top ---- */
+      var top = document.getElementById('to-top');
+      window.addEventListener('scroll', function () {
+        top.classList.toggle('show', window.scrollY > 500);
+      });
+      top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    })();
+  </script>
 </body>
 </html>
