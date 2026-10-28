@@ -28,11 +28,9 @@
       line-height: 1.7;
       background-color: #0b1722;
       background-image:
-        linear-gradient(rgba(8, 18, 28, 0.68), rgba(8, 18, 28, 0.68)),
-        url("images/math.png");
-      background-position: center top;
-      background-size: cover;
-      background-repeat: no-repeat;
+        radial-gradient(1200px 600px at 15% 0%, rgba(47, 143, 216, 0.28), transparent 60%),
+        radial-gradient(900px 500px at 85% 100%, rgba(15, 76, 129, 0.35), transparent 60%),
+        linear-gradient(180deg, #0b1722 0%, #0e2238 50%, #0b1722 100%);
       background-attachment: fixed;
     }
 
@@ -314,6 +312,81 @@
       font-size: 0.96rem;
     }
 
+    /* Research card media */
+    .research-item { padding: 0 0 18px; overflow: hidden; }
+    .research-item .media {
+      height: 150px;
+      background: linear-gradient(135deg, #e9f1f9, #d6e6f5);
+      overflow: hidden;
+      position: relative;
+    }
+    .research-item .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .research-item:hover .media img { transform: scale(1.06); }
+    .research-item .media svg { width: 100%; height: 100%; display: block; }
+    .research-item .body { padding: 14px 18px 0; }
+    .research-item .icon { margin-bottom: 8px; }
+
+    /* Featured block */
+    .feature {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .feature a.poster { display: block; }
+    .feature img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(16, 32, 47, 0.12);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      background: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature a.poster:hover img {
+      transform: translateY(-4px) rotate(-1deg);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.26);
+    }
+    .feature .kicker {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 999px;
+      background: #fff4d6;
+      color: #7a4b00;
+      border: 1px solid #f1d58a;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    .feature h3 { margin: 0 0 8px; font-size: 1.25rem; line-height: 1.35; }
+    .feature p { color: var(--muted); }
+
+    /* Publication thumbnails */
+    .pub.with-thumb {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .pub-thumb {
+      width: 130px;
+      height: 95px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 10px;
+      border: 1px solid rgba(16, 32, 47, 0.12);
+      background: #fff;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .pub.with-thumb:hover .pub-thumb { transform: scale(1.04); }
+
     ul.clean { list-style: none; padding: 0; margin: 0; }
 
     ul.clean li {
@@ -421,6 +494,10 @@
       .links { justify-content: center; }
       .two-col { grid-template-columns: 1fr; }
       .stats { grid-template-columns: repeat(2, 1fr); }
+      .feature { grid-template-columns: 1fr; }
+      .feature img { max-width: 260px; margin: 0 auto; display: block; }
+      .pub.with-thumb { grid-template-columns: 1fr; }
+      .pub-thumb { width: 100%; height: 140px; }
       h1 { font-size: 2rem; }
     }
 
@@ -479,28 +556,88 @@
       </p>
     </section>
 
+    <section id="featured" class="reveal">
+      <div class="feature">
+        <a class="poster" href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="ICCV 2025 workshop poster: Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery" />
+        </a>
+        <div>
+          <span class="kicker">Best Student Paper, ICCV 2025 Workshops</span>
+          <h3>Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery</h3>
+          <p>
+            An interpretable computer vision pipeline that measures facial change from photographs using 468-point landmarks, symmetry, perceived age, and face recognition, evaluated on more than 7,000 images from over 1,200 patients. Identity was preserved after surgery at a 99.5% true match rate.
+          </p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2508.13363" target="_blank" rel="noopener noreferrer">Read the paper</a>
+            <a href="https://github.com/varghaei/face-aesthetics-analysis" target="_blank" rel="noopener noreferrer">Code on GitHub</a>
+            <a href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer">View poster</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="research" class="reveal">
       <h2>Research</h2>
       <div class="research-grid">
         <div class="research-item">
-          <div class="icon">01</div>
-          <h3>Facial analysis and evaluation</h3>
-          <p>Interpretable measurement of facial change from photographs, including symmetry, perceived age, and identity preservation, validated with statistical testing on the largest curated dataset of its kind.</p>
+          <div class="media"><img src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="Facial analysis poster" /></div>
+          <div class="body">
+            <div class="icon">01</div>
+            <h3>Facial analysis and evaluation</h3>
+            <p>Interpretable measurement of facial change from photographs, including symmetry, perceived age, and identity preservation, validated with statistical testing on the largest curated dataset of its kind.</p>
+          </div>
         </div>
         <div class="research-item">
-          <div class="icon">02</div>
-          <h3>Generative AI and vision-language models</h3>
-          <p>Identity-preserving, geometry-constrained generative editing of facial images, and the use of large language and vision-language models to generate and classify images.</p>
+          <div class="media">
+            <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f4c81"/><stop offset="1" stop-color="#2f8fd8"/></linearGradient></defs>
+              <rect width="300" height="150" fill="url(#g1)"/>
+              <g fill="none" stroke="#fff" stroke-opacity="0.9" stroke-width="1.5">
+                <ellipse cx="110" cy="78" rx="42" ry="52"/>
+                <path d="M86 70 q10 -8 20 0 M114 70 q10 -8 20 0 M110 72 v18 l-7 4 M96 104 q14 10 28 0"/>
+              </g>
+              <g fill="#fff" fill-opacity="0.9">
+                <circle cx="86" cy="70" r="2"/><circle cx="106" cy="70" r="2"/><circle cx="114" cy="70" r="2"/><circle cx="134" cy="70" r="2"/>
+                <circle cx="110" cy="90" r="2"/><circle cx="103" cy="94" r="2"/><circle cx="96" cy="104" r="2"/><circle cx="124" cy="104" r="2"/>
+                <circle cx="68" cy="78" r="2"/><circle cx="152" cy="78" r="2"/><circle cx="110" cy="26" r="2"/><circle cx="110" cy="130" r="2"/>
+              </g>
+              <g stroke="#fff" stroke-opacity="0.5" stroke-width="1"><path d="M68 78 L86 70 L106 70 L110 90 L96 104 L110 130 L124 104 L110 90 L114 70 L134 70 L152 78"/></g>
+              <g fill="#fff"><path d="M225 40 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5z"/><path d="M258 88 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill-opacity="0.8"/><path d="M200 100 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5z" fill-opacity="0.7"/></g>
+              <text x="190" y="135" fill="#fff" font-family="Arial" font-size="11" fill-opacity="0.9">generate · edit · classify</text>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="icon">02</div>
+            <h3>Generative AI and vision-language models</h3>
+            <p>Identity-preserving, geometry-constrained generative editing of facial images, and the use of large language and vision-language models to generate and classify images.</p>
+          </div>
         </div>
         <div class="research-item">
-          <div class="icon">03</div>
-          <h3>Long-range biometrics</h3>
-          <p>Face and body fusion, quality-based video frame selection, and multi-frame enhancement for recognizing people at distances up to 1,000 m and altitudes up to 200 m, using petabyte-scale video.</p>
+          <div class="media"><img src="images/Farsight.jpg" alt="FarSight long-range biometric system overview" /></div>
+          <div class="body">
+            <div class="icon">03</div>
+            <h3>Long-range biometrics</h3>
+            <p>Face and body fusion, quality-based video frame selection, and multi-frame enhancement for recognizing people at distances up to 1,000 m and altitudes up to 200 m, using petabyte-scale video.</p>
+          </div>
         </div>
         <div class="research-item">
-          <div class="icon">04</div>
-          <h3>Trustworthy evaluation</h3>
-          <p>How digital editing and non-surgical factors distort automated assessment and face recognition, and when model outputs should not be trusted.</p>
+          <div class="media">
+            <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#143a5c"/><stop offset="1" stop-color="#0f4c81"/></linearGradient></defs>
+              <rect width="300" height="150" fill="url(#g2)"/>
+              <path d="M80 30 l40 -12 40 12 v38 c0 28 -22 44 -40 52 c-18 -8 -40 -24 -40 -52z" fill="none" stroke="#fff" stroke-width="2" stroke-opacity="0.9"/>
+              <path d="M100 76 l14 14 26 -30" fill="none" stroke="#7fe0a8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g stroke="#fff" stroke-opacity="0.35" stroke-width="1"><path d="M190 120 H280 M190 100 H280 M190 80 H280 M190 60 H280 M190 40 H280"/></g>
+              <polyline points="192,112 212,96 232,104 252,70 272,58" fill="none" stroke="#7fc3ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <g fill="#fff"><circle cx="212" cy="96" r="3"/><circle cx="232" cy="104" r="3"/><circle cx="252" cy="70" r="3"/><circle cx="272" cy="58" r="3"/></g>
+              <text x="190" y="138" fill="#fff" font-family="Arial" font-size="11" fill-opacity="0.9">when can outputs be trusted?</text>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="icon">04</div>
+            <h3>Trustworthy evaluation</h3>
+            <p>How digital editing and non-surgical factors distort automated assessment and face recognition, and when model outputs should not be trusted.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -508,7 +645,9 @@
     <section id="publications" class="reveal">
       <h2>Selected Publications</h2>
 
-      <div class="pub">
+      <div class="pub with-thumb">
+        <a href="images/iccv25_poster_Pegah_Varghaei.jpg" target="_blank" rel="noopener noreferrer"><img class="pub-thumb" src="images/iccv25_poster_Pegah_Varghaei.jpg" alt="ICCV 2025 poster" /></a>
+        <div>
         <div class="pub-title">Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery <span class="badge">Best Student Paper</span></div>
         <div class="pub-meta"><strong>Pegah Varghaei</strong>, Kiran Abraham-Aggarwal, Manoj T. Abraham, Arun Ross. ICCV Workshops, 2025.</div>
         <div class="pub-links">
@@ -516,22 +655,29 @@
           <a href="https://arxiv.org/abs/2508.13363" target="_blank" rel="noopener noreferrer">arXiv</a>
           <a href="https://github.com/varghaei/face-aesthetics-analysis" target="_blank" rel="noopener noreferrer">Code</a>
         </div>
+        </div>
       </div>
 
-      <div class="pub">
+      <div class="pub with-thumb">
+        <a href="images/Farsight.jpg" target="_blank" rel="noopener noreferrer"><img class="pub-thumb" src="images/Farsight.jpg" alt="FarSight overview" /></a>
+        <div>
         <div class="pub-title">FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude</div>
         <div class="pub-meta">Feng Liu, Ryan Ashbaugh, Nicholas Chimitt, Najmul Hassan, Ali Hassani, Ajay Jaiswal, Minchul Kim, Zhiyuan Mao, Christopher Perry, Zhiyuan Ren, Yiyang Su, <strong>Pegah Varghaei</strong>, et al. WACV, 2024.</div>
         <div class="pub-links">
           <a href="https://openaccess.thecvf.com/content/WACV2024/html/Liu_FarSight_A_Physics-Driven_Whole-Body_Biometric_System_at_Large_Distance_and_WACV_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper</a>
           <a href="https://arxiv.org/abs/2312.08603" target="_blank" rel="noopener noreferrer">arXiv</a>
         </div>
+        </div>
       </div>
 
-      <div class="pub">
+      <div class="pub with-thumb">
+        <a href="images/Beam.jpg" target="_blank" rel="noopener noreferrer"><img class="pub-thumb" src="images/Beam.jpg" alt="Fractional viscoelastic beam figure" /></a>
+        <div>
         <div class="pub-title">Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams</div>
         <div class="pub-meta">Jorge L. Suzuki, Ehsan Kharazmi, <strong>Pegah Varghaei</strong>, Maryam Naghibolhosseini, Mohsen Zayernouri. Journal of Computational and Nonlinear Dynamics, 2021.</div>
         <div class="pub-links">
           <a href="https://doi.org/10.1115/1.4052286" target="_blank" rel="noopener noreferrer">DOI</a>
+        </div>
         </div>
       </div>
 
