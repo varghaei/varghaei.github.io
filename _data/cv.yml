@@ -1,0 +1,119 @@
+# CV data in RenderCV format (https://docs.rendercv.com/user_guide/yaml_input_structure/).
+# It drives the /cv/ page and, via .github/workflows/render-cv.yml, an auto-generated PDF
+# in assets/rendercv/rendercv_output/. Keep it RenderCV-valid so that workflow succeeds.
+cv:
+  name: Pegah Varghaei
+  headline: PhD Candidate, Computer Science and Engineering, Michigan State University
+  location: East Lansing, MI
+  email: varghaei@msu.edu
+  website: https://varghaei.github.io
+
+  social_networks:
+    - network: Google Scholar
+      username: f1Lxc7EAAAAJ
+    - network: GitHub
+      username: varghaei
+    - network: LinkedIn
+      username: pegah-varghaei-7724b0146
+
+  sections:
+    Education:
+      - institution: Michigan State University
+        area: Computer Science and Engineering
+        degree: PhD
+        location: East Lansing, MI
+        start_date: 2021
+        end_date: present
+        highlights:
+          - "Advisor: Prof. Arun Ross"
+          - "Expected graduation: December 2027"
+
+      - institution: Michigan State University
+        area: Mechanical Engineering
+        degree: MS
+        location: East Lansing, MI
+        start_date: 2018
+        end_date: 2020
+        highlights:
+          - "Advisor: Prof. Mohsen Zayernouri"
+
+      - institution: Michigan State University
+        area: Computational Mathematics
+        degree: BS
+        location: East Lansing, MI
+        start_date: 2015
+        end_date: 2017
+        highlights:
+          - Minor in Computer Science and Engineering
+
+    Experience:
+      - company: Michigan State University
+        position: Teaching Assistant
+        location: East Lansing, MI
+        highlights:
+          - "CSE 331: Algorithms and Data Structures"
+          - "CSE 802: Pattern Recognition"
+          - "CSE 300: Social and Ethical Issues in Computing"
+          - "CSE 231: Introduction to Programming"
+          - "CSE 102: Algorithmic Thinking and Programming"
+
+    Awards and Fellowships:
+      - bullet: "**Best Student Paper Award**, ICCV 2025 Workshops, for *Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery* (2025)"
+      - bullet: "**Graduate School Research and Travel Fellowship**, Michigan State University (2025)"
+
+    Publications:
+      - title: Automated Assessment of Aesthetic Outcomes in Facial Plastic Surgery
+        authors:
+          - "*Pegah Varghaei*"
+          - Kiran Abraham-Aggarwal
+          - Manoj T. Abraham
+          - Arun Ross
+        journal: IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)
+        publisher: IEEE/CVF International Conference on Computer Vision Workshops (ICCVW). Best Student Paper Award.
+        date: 2025-10
+        url: https://arxiv.org/abs/2508.13363
+
+      - title: "FarSight: A Physics-Driven Whole-Body Biometric System at Large Distance and Altitude"
+        authors:
+          - Feng Liu
+          - Ryan Ashbaugh
+          - Nicholas Chimitt
+          - Najmul Hassan
+          - Ali Hassani
+          - Ajay Jaiswal
+          - Minchul Kim
+          - Zhiyuan Mao
+          - Christopher Perry
+          - Zhiyuan Ren
+          - Yiyang Su
+          - "*Pegah Varghaei*"
+          - Kai Wang
+          - Xingguang Zhang
+          - Stanley Chan
+          - Arun Ross
+          - Humphrey Shi
+          - Zhangyang Wang
+          - Anil Jain
+          - Xiaoming Liu
+        journal: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+        publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+        date: 2024-01
+        url: https://arxiv.org/abs/2312.08603
+
+      - title: Anomalous Nonlinear Dynamics Behavior of Fractional Viscoelastic Beams
+        authors:
+          - Jorge L. Suzuki
+          - Ehsan Kharazmi
+          - "*Pegah Varghaei*"
+          - Maryam Naghibolhosseini
+          - Mohsen Zayernouri
+        journal: Journal of Computational and Nonlinear Dynamics, 16(11):111005
+        publisher: Journal of Computational and Nonlinear Dynamics, 16(11):111005
+        date: 2021
+        doi: 10.1115/1.4052286
+
+    Service:
+      - label: Board Member
+        details: Iranian Students Association, Michigan State University (2024 – present)
+      - label: Volunteer Mentor
+        details: Spartan Girls Summer Camp (2023 – present)

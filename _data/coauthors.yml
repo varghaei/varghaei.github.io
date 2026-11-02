@@ -1,0 +1,5 @@
+# Co-author links used on the publications page.
+# Keys are lower-cased last names without accents.
+"ross":
+  - firstname: ["Arun", "A."]
+    url: https://www.cse.msu.edu/~rossarun/
